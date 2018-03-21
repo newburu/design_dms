@@ -1,0 +1,2 @@
+class CuffType < ApplicationRecord
+end

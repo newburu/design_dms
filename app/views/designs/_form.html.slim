@@ -1,0 +1,23 @@
+= simple_form_for(@design) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.association :genre
+    = f.association :collar_type
+    = f.association :sleeve_type
+    = f.association :cuff_type
+    = f.association :swimsuit_type
+    = f.association :tops_type
+    = f.association :skirt_type
+    = f.association :size
+    = f.association :sex
+    = f.input :memo
+    = f.input :design_img
+    = f.input :pattern_img
+    = f.input :finished_img
+/    = f.input :view_point
+/    = f.input :download_point
+
+  .form-actions
+    = f.button :submit

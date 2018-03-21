@@ -1,0 +1,2 @@
+class SleeveType < ApplicationRecord
+end

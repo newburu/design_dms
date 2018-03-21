@@ -1,0 +1,21 @@
+h1 Listing sexes
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @sexes.each do |sex|
+      tr
+        td = sex.name
+        td = link_to 'Show', sex
+        td = link_to 'Edit', edit_sex_path(sex)
+        td = link_to 'Destroy', sex, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Sex', new_sex_path

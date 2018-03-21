@@ -1,0 +1,2 @@
+class CollarType < ApplicationRecord
+end

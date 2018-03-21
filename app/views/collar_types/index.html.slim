@@ -1,0 +1,21 @@
+h1 Listing collar_types
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @collar_types.each do |collar_type|
+      tr
+        td = collar_type.name
+        td = link_to 'Show', collar_type
+        td = link_to 'Edit', edit_collar_type_path(collar_type)
+        td = link_to 'Destroy', collar_type, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Collar type', new_collar_type_path

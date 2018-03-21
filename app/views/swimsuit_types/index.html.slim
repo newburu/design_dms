@@ -1,0 +1,21 @@
+h1 Listing swimsuit_types
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @swimsuit_types.each do |swimsuit_type|
+      tr
+        td = swimsuit_type.name
+        td = link_to 'Show', swimsuit_type
+        td = link_to 'Edit', edit_swimsuit_type_path(swimsuit_type)
+        td = link_to 'Destroy', swimsuit_type, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Swimsuit type', new_swimsuit_type_path

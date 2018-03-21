@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @collar_type.name
+
+=> link_to 'Edit', edit_collar_type_path(@collar_type)
+'|
+=< link_to 'Back', collar_types_path

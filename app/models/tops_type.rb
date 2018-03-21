@@ -1,0 +1,2 @@
+class TopsType < ApplicationRecord
+end

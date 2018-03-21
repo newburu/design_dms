@@ -1,0 +1,21 @@
+h1 Listing sleeve_types
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @sleeve_types.each do |sleeve_type|
+      tr
+        td = sleeve_type.name
+        td = link_to 'Show', sleeve_type
+        td = link_to 'Edit', edit_sleeve_type_path(sleeve_type)
+        td = link_to 'Destroy', sleeve_type, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Sleeve type', new_sleeve_type_path

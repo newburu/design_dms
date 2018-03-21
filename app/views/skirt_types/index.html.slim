@@ -1,0 +1,21 @@
+h1 Listing skirt_types
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @skirt_types.each do |skirt_type|
+      tr
+        td = skirt_type.name
+        td = link_to 'Show', skirt_type
+        td = link_to 'Edit', edit_skirt_type_path(skirt_type)
+        td = link_to 'Destroy', skirt_type, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Skirt type', new_skirt_type_path

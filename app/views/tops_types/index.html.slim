@@ -1,0 +1,21 @@
+h1 Listing tops_types
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @tops_types.each do |tops_type|
+      tr
+        td = tops_type.name
+        td = link_to 'Show', tops_type
+        td = link_to 'Edit', edit_tops_type_path(tops_type)
+        td = link_to 'Destroy', tops_type, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Tops type', new_tops_type_path

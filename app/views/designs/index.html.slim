@@ -1,0 +1,51 @@
+h1 Listing designs
+
+table
+  thead
+    tr
+      th Name
+      th Genre
+      th Collar type
+      th Sleeve type
+      th Cuff type
+      th Swimsuit type
+      th Tops type
+      th Skirt type
+      th Size
+      th Sex
+      th Memo
+      th Design img
+      th Pattern img
+      th Finished img
+      th View point
+      th Download point
+      th
+      th
+      th
+
+  tbody
+    - @designs.each do |design|
+      tr
+        td = design.name
+        td = design.genre
+        td = design.collar_type
+        td = design.sleeve_type
+        td = design.cuff_type
+        td = design.swimsuit_type
+        td = design.tops_type
+        td = design.skirt_type
+        td = design.size
+        td = design.sex
+        td = design.memo
+        td = design.design_img
+        td = design.pattern_img
+        td = design.finished_img
+        td = design.view_point
+        td = design.download_point
+        td = link_to 'Show', design
+        td = link_to 'Edit', edit_design_path(design)
+        td = link_to 'Destroy', design, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Design', new_design_path

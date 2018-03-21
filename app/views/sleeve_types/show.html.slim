@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @sleeve_type.name
+
+=> link_to 'Edit', edit_sleeve_type_path(@sleeve_type)
+'|
+=< link_to 'Back', sleeve_types_path

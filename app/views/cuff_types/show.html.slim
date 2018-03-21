@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @cuff_type.name
+
+=> link_to 'Edit', edit_cuff_type_path(@cuff_type)
+'|
+=< link_to 'Back', cuff_types_path

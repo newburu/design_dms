@@ -52,6 +52,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'slim-rails'
 gem 'devise'
+gem 'twitter'
+gem 'oauth'
+gem 'omniauth-twitter'
 gem 'friendly_id'
 group :development, :test do
   gem 'rspec-rails'
@@ -99,3 +102,5 @@ end
 gem 'bootstrap'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
+
+gem 'seed-fu'

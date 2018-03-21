@@ -1,0 +1,54 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @design.name
+p
+  strong Genre:
+  = @design.genre
+p
+  strong Collar type:
+  = @design.collar_type
+p
+  strong Sleeve type:
+  = @design.sleeve_type
+p
+  strong Cuff type:
+  = @design.cuff_type
+p
+  strong Swimsuit type:
+  = @design.swimsuit_type
+p
+  strong Tops type:
+  = @design.tops_type
+p
+  strong Skirt type:
+  = @design.skirt_type
+p
+  strong Size:
+  = @design.size
+p
+  strong Sex:
+  = @design.sex
+p
+  strong Memo:
+  = @design.memo
+p
+  strong Design img:
+  = @design.design_img
+p
+  strong Pattern img:
+  = @design.pattern_img
+p
+  strong Finished img:
+  = @design.finished_img
+p
+  strong View point:
+  = @design.view_point
+p
+  strong Download point:
+  = @design.download_point
+
+=> link_to 'Edit', edit_design_path(@design)
+'|
+=< link_to 'Back', designs_path

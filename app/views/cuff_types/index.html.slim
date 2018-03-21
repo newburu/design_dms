@@ -1,0 +1,21 @@
+h1 Listing cuff_types
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @cuff_types.each do |cuff_type|
+      tr
+        td = cuff_type.name
+        td = link_to 'Show', cuff_type
+        td = link_to 'Edit', edit_cuff_type_path(cuff_type)
+        td = link_to 'Destroy', cuff_type, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Cuff type', new_cuff_type_path
