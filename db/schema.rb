@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20180320114607) do
   end
 
   create_table "designs", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.integer "genre_id"
     t.integer "collar_type_id"
     t.integer "sleeve_type_id"

@@ -1,7 +1,7 @@
 class CreateDesigns < ActiveRecord::Migration[5.1]
   def change
     create_table :designs do |t|
-      t.string :name
+      t.string :name, null: false
       t.references :genre, foreign_key: true
       t.references :collar_type, foreign_key: true
       t.references :sleeve_type, foreign_key: true
