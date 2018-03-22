@@ -37,9 +37,15 @@ table
         td = design.size.name
         td = design.sex.name
         td = design.memo
-        td = design.design_img
-        td = design.pattern_img
-        td = design.finished_img
+        td
+          .thumbnail
+            = image_tag design.design_img.thumb.url
+        td
+          .thumbnail
+            = image_tag design.pattern_img.thumb.url
+        td
+          .thumbnail
+            = image_tag design.finished_img.thumb.url
         td = design.view_point
         td = design.download_point
         td = link_to 'Show', design

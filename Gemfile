@@ -108,3 +108,7 @@ group :development do
 end
 
 gem 'seed-fu'
+
+# ファイルアップロード
+gem "carrierwave"
+gem "mini_magick"
