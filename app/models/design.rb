@@ -13,4 +13,6 @@ class Design < ApplicationRecord
   mount_uploader :pattern_img, ImageUploader
   mount_uploader :finished_img, ImageUploader
 
+  validates :name, presence: true
+
 end
