@@ -39,13 +39,13 @@ table
         td = design.memo
         td
           .thumbnail
-            = image_tag design.design_img.thumb.url
+            = image_tag design.design_img.thumb.url if design.design_img.present?
         td
           .thumbnail
-            = image_tag design.pattern_img.thumb.url
+            = image_tag design.pattern_img.thumb.url if design.pattern_img.present?
         td
           .thumbnail
-            = image_tag design.finished_img.thumb.url
+            = image_tag design.finished_img.thumb.url if design.finished_img.present?
         td = design.view_point
         td = design.download_point
         td = link_to 'Show', design
