@@ -103,4 +103,8 @@ gem 'bootstrap'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 
+group :development do
+  gem 'bootstrap-generators'
+end
+
 gem 'seed-fu'
