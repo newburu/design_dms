@@ -54,6 +54,7 @@ gem 'slim-rails'
 gem 'devise'
 gem 'twitter'
 gem 'oauth'
+gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'friendly_id'
 group :development, :test do
@@ -112,3 +113,8 @@ gem 'seed-fu'
 # ファイルアップロード
 gem "carrierwave"
 gem "mini_magick"
+
+gem 'config'
+
+# sessionをDBに変更
+gem 'activerecord-session_store'

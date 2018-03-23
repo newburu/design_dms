@@ -34,5 +34,9 @@ module DesignDms
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # sessionをDBに保存
+    config.session_store :active_record_store, :key => '_my_app_session'
+
   end
 end

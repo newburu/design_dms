@@ -14,5 +14,6 @@ class Design < ApplicationRecord
   mount_uploader :finished_img, ImageUploader
 
   validates :name, presence: true
+  validates :user, presence: true
 
 end
