@@ -78,6 +78,8 @@ names = [
   "カスケーディング",
   "スタンド・アウト",
 ]
+#TODO：「指定なし」だけにする
+names = [names[0]]
 names.each.with_index(1) do |name, idx|
   CollarType.seed do |s|
     s.id = idx
