@@ -1,0 +1,24 @@
+ja:
+  activerecord:
+    models:
+      design: デザイン
+    attributes:
+      design:
+        uid: UID
+        name: 名前
+        genre: ジャンル
+        collar_type: 襟種類
+        sleeve_type: 袖種類
+        cuff_type: 袖口種類
+        swimsuit_type: 水着種類
+        tops_type: トップス種類
+        skirt_type: スカート種類
+        size: サイズ
+        sex: 性別
+        memo: 補足事項
+        design_img: デザイン
+        pattern_img: 型紙
+        finished_img: 完成
+        user: 登録者
+        view_point: 参照数
+        download_point: ダウンロード数

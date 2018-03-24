@@ -1,52 +1,52 @@
 p#notice = notice
 
 p
-  strong Name:
+  strong = "#{t('activerecord.attributes.design.name')}:"
   = @design.name
 p
-  strong Genre:
+  strong = "#{t('activerecord.attributes.design.genre')}:"
   = @design.genre.name
 p
-  strong Collar type:
+  strong = "#{t('activerecord.attributes.design.collar_type')}:"
   = @design.collar_type.name
 p
-  strong Sleeve type:
+  strong = "#{t('activerecord.attributes.design.sleeve_type')}:"
   = @design.sleeve_type.name
 p
-  strong Cuff type:
+  strong = "#{t('activerecord.attributes.design.cuff_type')}:"
   = @design.cuff_type.name
 p
-  strong Swimsuit type:
+  strong = "#{t('activerecord.attributes.design.swimsuit_type')}:"
   = @design.swimsuit_type.name
 p
-  strong Tops type:
+  strong = "#{t('activerecord.attributes.design.tops_type')}:"
   = @design.tops_type.name
 p
-  strong Skirt type:
+  strong = "#{t('activerecord.attributes.design.skirt_type')}:"
   = @design.skirt_type.name
 p
-  strong Size:
+  strong = "#{t('activerecord.attributes.design.size')}:"
   = @design.size.name
 p
-  strong Sex:
+  strong = "#{t('activerecord.attributes.design.sex')}:"
   = @design.sex.name
 p
-  strong Memo:
+  strong = "#{t('activerecord.attributes.design.memo')}:"
   = @design.memo
 p
-  strong Design img:
+  strong = "#{t('activerecord.attributes.design.design_img')}:"
   = image_tag @design.design_img
 p
-  strong Pattern img:
+  strong = "#{t('activerecord.attributes.design.pattern_img')}:"
   = image_tag @design.pattern_img
 p
-  strong Finished img:
+  strong = "#{t('activerecord.attributes.design.finished_img')}:"
   = image_tag @design.finished_img
 p
-  strong View point:
+  strong = "#{t('activerecord.attributes.design.view_point')}:"
   = @design.view_point
 p
-  strong Download point:
+  strong = "#{t('activerecord.attributes.design.download_point')}:"
   = @design.download_point
 
 => link_to 'Edit', edit_design_path(@design)
