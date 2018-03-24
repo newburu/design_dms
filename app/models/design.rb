@@ -8,6 +8,7 @@ class Design < ApplicationRecord
   belongs_to :skirt_type
   belongs_to :size
   belongs_to :sex
+  belongs_to :user
 
   mount_uploader :design_img, ImageUploader
   mount_uploader :pattern_img, ImageUploader

@@ -17,6 +17,7 @@ table
       th Design img
       th Pattern img
       th Finished img
+      th User
       th View point
       th Download point
       th
@@ -46,6 +47,7 @@ table
         td
           .thumbnail
             = image_tag design.finished_img.thumb.url if design.finished_img.present?
+        td = design.user.name
         td = design.view_point
         td = design.download_point
         td = link_to 'Show', design
