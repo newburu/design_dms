@@ -1,25 +1,53 @@
 h1 = t('activerecord.models.design')
 
+= search_form_for @q do |f|
+  p
+    = f.label :name
+    = f.search_field :name_cont
+  p
+    = f.label :genre_id
+    = f.collection_select :genre_id_eq, @genres, :id, :name, include_blank: true
+  p
+    = f.label :collar_type_id
+    = f.collection_select :collar_type_id_eq, @collar_types, :id, :name, include_blank: true
+    = f.label :sleeve_type_id
+    = f.collection_select :sleeve_type_id_eq, @sleeve_types, :id, :name, include_blank: true
+    = f.label :cuff_type_id
+    = f.collection_select :cuff_type_id_eq, @cuff_types, :id, :name, include_blank: true
+    = f.label :swimsuit_type_id
+    = f.collection_select :swimsuit_type_id_eq, @swimsuit_types, :id, :name, include_blank: true
+    = f.label :tops_type_id
+    = f.collection_select :tops_type_id_eq, @tops_types, :id, :name, include_blank: true
+    = f.label :skirt_type_id
+    = f.collection_select :skirt_type_id_eq, @skirt_types, :id, :name, include_blank: true
+  p
+    = f.label :size_id
+    = f.collection_select :size_id_eq, @sizes, :id, :name, include_blank: true
+    = f.label :sex_id
+    = f.collection_select :sex_id_eq, @sexs, :id, :name, include_blank: true
+  = f.submit
+  p
+
 table
   thead
     tr
-      th = t('activerecord.attributes.design.name')
-      th = t('activerecord.attributes.design.genre')
-      th = t('activerecord.attributes.design.collar_type')
-      th = t('activerecord.attributes.design.sleeve_type')
-      th = t('activerecord.attributes.design.cuff_type')
-      th = t('activerecord.attributes.design.swimsuit_type')
-      th = t('activerecord.attributes.design.tops_type')
-      th = t('activerecord.attributes.design.skirt_type')
-      th = t('activerecord.attributes.design.size')
-      th = t('activerecord.attributes.design.sex')
-      th = t('activerecord.attributes.design.memo')
-      th = t('activerecord.attributes.design.design_img')
-      th = t('activerecord.attributes.design.pattern_img')
-      th = t('activerecord.attributes.design.finished_img')
-      th = t('activerecord.attributes.design.user')
-      th = t('activerecord.attributes.design.view_point')
-      th = t('activerecord.attributes.design.download_point')
+      th = sort_link(@q, :name)
+      th = sort_link(@q, :genre_id)
+      th = sort_link(@q, :collar_type_id)
+      th = sort_link(@q, :sleeve_type_id)
+      th = sort_link(@q, :cuff_type_id)
+      th = sort_link(@q, :swimsuit_type_id)
+      th = sort_link(@q, :tops_type_id)
+      th = sort_link(@q, :skirt_type_id)
+      th = sort_link(@q, :size_id)
+      th = sort_link(@q, :sex_id)
+      th = sort_link(@q, :memo)
+      th = sort_link(@q, :design_img)
+      th = sort_link(@q, :pattern_img)
+      th = sort_link(@q, :finished_img)
+      th = sort_link(@q, :user)
+      th = sort_link(@q, :view_point)
+      th = sort_link(@q, :download_point)
       th
       th
       th
@@ -28,15 +56,15 @@ table
     - @designs.each do |design|
       tr
         td = design.name
-        td = design.genre.name
-        td = design.collar_type.name
-        td = design.sleeve_type.name
-        td = design.cuff_type.name
-        td = design.swimsuit_type.name
-        td = design.tops_type.name
-        td = design.skirt_type.name
-        td = design.size.name
-        td = design.sex.name
+        td = design.genre.try(:name)
+        td = design.collar_type.try(:name)
+        td = design.sleeve_type.try(:name)
+        td = design.cuff_type.try(:name)
+        td = design.swimsuit_type.try(:name)
+        td = design.tops_type.try(:name)
+        td = design.skirt_type.try(:name)
+        td = design.size.try(:name)
+        td = design.sex.try(:name)
         td = design.memo
         td
           .thumbnail

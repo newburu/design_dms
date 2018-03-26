@@ -7,14 +7,23 @@ ja:
         uid: UID
         name: 名前
         genre: ジャンル
+        genre_id: ジャンル
         collar_type: 襟種類
+        collar_type_id: 襟種類
         sleeve_type: 袖種類
+        sleeve_type_id: 袖種類
         cuff_type: 袖口種類
+        cuff_type_id: 袖口種類
         swimsuit_type: 水着種類
+        swimsuit_type_id: 水着種類
         tops_type: トップス種類
+        tops_type_id: トップス種類
         skirt_type: スカート種類
+        skirt_type_id: スカート種類
         size: サイズ
+        size_id: サイズ
         sex: 性別
+        sex_id: 性別
         memo: 補足事項
         design_img: デザイン
         pattern_img: 型紙

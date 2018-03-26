@@ -1,13 +1,13 @@
 class Design < ApplicationRecord
-  belongs_to :genre
-  belongs_to :collar_type
-  belongs_to :sleeve_type
-  belongs_to :cuff_type
-  belongs_to :swimsuit_type
-  belongs_to :tops_type
-  belongs_to :skirt_type
-  belongs_to :size
-  belongs_to :sex
+  belongs_to :genre, optional: true
+  belongs_to :collar_type, optional: true
+  belongs_to :sleeve_type, optional: true
+  belongs_to :cuff_type, optional: true
+  belongs_to :swimsuit_type, optional: true
+  belongs_to :tops_type, optional: true
+  belongs_to :skirt_type, optional: true
+  belongs_to :size, optional: true
+  belongs_to :sex, optional: true
   belongs_to :user
 
   mount_uploader :design_img, ImageUploader

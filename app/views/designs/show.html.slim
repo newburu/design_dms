@@ -5,31 +5,31 @@ p
   = @design.name
 p
   strong = "#{t('activerecord.attributes.design.genre')}:"
-  = @design.genre.name
+  = @design.genre.try(:name)
 p
   strong = "#{t('activerecord.attributes.design.collar_type')}:"
-  = @design.collar_type.name
+  = @design.collar_type.try(:name)
 p
   strong = "#{t('activerecord.attributes.design.sleeve_type')}:"
-  = @design.sleeve_type.name
+  = @design.sleeve_type.try(:name)
 p
   strong = "#{t('activerecord.attributes.design.cuff_type')}:"
-  = @design.cuff_type.name
+  = @design.cuff_type.try(:name)
 p
   strong = "#{t('activerecord.attributes.design.swimsuit_type')}:"
-  = @design.swimsuit_type.name
+  = @design.swimsuit_type.try(:name)
 p
   strong = "#{t('activerecord.attributes.design.tops_type')}:"
-  = @design.tops_type.name
+  = @design.tops_type.try(:name)
 p
   strong = "#{t('activerecord.attributes.design.skirt_type')}:"
-  = @design.skirt_type.name
+  = @design.skirt_type.try(:name)
 p
   strong = "#{t('activerecord.attributes.design.size')}:"
-  = @design.size.name
+  = @design.size.try(:name)
 p
   strong = "#{t('activerecord.attributes.design.sex')}:"
-  = @design.sex.name
+  = @design.sex.try(:name)
 p
   strong = "#{t('activerecord.attributes.design.memo')}:"
   = @design.memo

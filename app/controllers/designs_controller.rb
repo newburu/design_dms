@@ -1,5 +1,19 @@
 class DesignsController < InheritedResources::Base
 
+  def index
+    @q = Design.ransack(params[:q])
+    @designs = @q.result
+    @genres = Genre.all
+    @collar_types = CollarType.all
+    @sleeve_types = SleeveType.all
+    @cuff_types = CuffType.all
+    @swimsuit_types = SwimsuitType.all
+    @tops_types = TopsType.all
+    @skirt_types = SkirtType.all
+    @sizes = Size.all
+    @sexs = Sex.all
+  end
+
   private
 
     def design_params

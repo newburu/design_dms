@@ -118,3 +118,9 @@ gem 'config'
 
 # sessionをDBに変更
 gem 'activerecord-session_store'
+
+# 検索
+gem 'ransack'
+# ページネーション
+gem 'kaminari'
+
