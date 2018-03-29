@@ -25,10 +25,10 @@ h1 = t('activerecord.models.design')
     = f.collection_select :size_id_eq, @sizes, :id, :name, include_blank: true
     = f.label :sex_id
     = f.collection_select :sex_id_eq, @sexs, :id, :name, include_blank: true
-  = f.submit
+  = f.submit  class: "btn-primary"
   p
 
-table
+table.table.table-striped.table-hover.table-responsive.table-bordered
   thead
     tr
       th = sort_link(@q, :name)
