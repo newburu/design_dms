@@ -1,43 +1,50 @@
 doctype html
-html
+html lang="en"
   head
     meta charset="utf-8"
-    meta http-equiv="X-UA-Compatible" content="IE=edge"
-    meta name="viewport" content="width=device-width, initial-scale=1"
-    meta name="description" content=""
-    meta name="author" content=""
-    title
-      = Settings.system[:title]
-    /! HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
-    /[if lt IE 9]
-      = javascript_include_tag "https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js", "https://oss.maxcdn.com/respond/1.4.2/respond.min.js"
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    = favicon_link_tag
+    title= content_for?(:title) ? yield(:title) : Settings.system[:title]
     = csrf_meta_tags
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+    /! Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
+
   body
-    .navbar.navbar-default.navbar-static-top
-        .container
-          button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a = link_to Settings.system[:title], root_path, {class: 'navbar-brand'}
-          .navbar-collapse.collapse.navbar-responsive-collapse
-            ul.nav.navbar-nav
-              - if user_signed_in?
-                = "#{current_user.name}さん"
-                li = link_to 'ログアウト', destroy_user_session_path
-              - else
-                li = link_to "twitterでログイン", user_twitter_omniauth_authorize_path
-                
-              /li= link_to "このサイトについて", static_pages_info_path
-              /li= link_to "更新履歴＆予定", static_pages_update_path
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+      = link_to Settings.system[:title], root_path, {class: 'navbar-brand'}
+      button.navbar-toggler.navbar-toggler-right type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"
+        span.navbar-toggler-icon
+      #navbar.navbar-collapse.collapse
+        ul.navbar-nav.mr-auto
+          - if user_signed_in?
+            li.nav-item.dropdown
+              = link_to '機能', '#', {class: "nav-link dropdown-toggle", data: {toggle: "dropdown"}}
+              .dropdown-menu
+                = link_to 'デザイン検索', designs_path, {class: "dropdown-item"}
+
+          li.nav-item = link_to "このサイトについて", static_pages_info_path, {class: "nav-link"}
+          li.nav-item = link_to "更新履歴＆予定", static_pages_update_path, {class: "nav-link"}
+        ul.nav.navbar-nav
+          - if user_signed_in?
+            span.navbar-text
+              = "#{current_user.name}さん"
+            li.nav-item = link_to 'ログアウト', destroy_user_session_path, {class: "nav-link"}
+          - else
+            li.nav-item = link_to "Twitterでログイン", user_twitter_omniauth_authorize_path, {class: "nav-link"}
 
     .container
       .row
-        .col-lg-9
-          /= bootstrap_flash
+        .col-lg
+          - flash.each do |key, value|
+            div class="alert alert-#{key}"
+              = value
           = yield
+
+      = render 'shared/adsense'
 
       footer
         p class="license" &copy; Copyright. 2018 Newburu All Rights Reserved.

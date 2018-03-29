@@ -15,6 +15,10 @@ Rails.application.routes.draw do
 
   root 'designs#index'
 
+  # 静的ページ
+  get 'static_pages/info'
+  get 'static_pages/update'
+
   devise_scope :user do
     get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session

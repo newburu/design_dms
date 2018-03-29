@@ -1,6 +1,8 @@
 class DesignsController < InheritedResources::Base
 
   def index
+    redirect_to static_pages_info_url unless current_user.present?
+    
     @q = Design.ransack(params[:q])
     @designs = @q.result
     @genres = Genre.all
