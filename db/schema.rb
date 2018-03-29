@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 20180323124804) do
     t.string "design_img"
     t.string "pattern_img"
     t.string "finished_img"
-    t.integer "view_point"
-    t.integer "download_point"
+    t.integer "view_point", default: 0
+    t.integer "download_point", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"

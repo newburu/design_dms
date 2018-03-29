@@ -15,8 +15,8 @@ class CreateDesigns < ActiveRecord::Migration[5.1]
       t.string :design_img
       t.string :pattern_img
       t.string :finished_img
-      t.integer :view_point
-      t.integer :download_point
+      t.integer :view_point, default: 0
+      t.integer :download_point, default: 0
 
       t.timestamps
     end

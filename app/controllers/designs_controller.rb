@@ -16,6 +16,15 @@ class DesignsController < InheritedResources::Base
     @sexs = Sex.all
   end
 
+  def show
+    # 参照カウントを増やす(作成者でなければ)
+    @design = Design.find(params[:id])
+    unless @design.user == current_user
+      @design.view_point = @design.view_point + 1
+      @design.save!
+    end
+  end
+
   private
 
     def design_params
