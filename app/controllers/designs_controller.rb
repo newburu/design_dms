@@ -26,6 +26,19 @@ class DesignsController < InheritedResources::Base
     end
   end
 
+  def edit
+    @design = Design.find(params[:id])
+    redirect_to design_path unless @design.user_eq?(current_user)
+  end
+
+  def destroy
+    @design = Design.find(params[:id])
+    if @design.user_eq?(current_user)
+      @design.delete
+    end
+    redirect_to designs_path
+  end
+
   private
 
     def design_params

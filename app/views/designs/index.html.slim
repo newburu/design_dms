@@ -83,8 +83,10 @@ table.table.table-striped.table-hover.table-responsive.table-bordered
         td = design.view_point
         td = design.download_point
         td = link_to t('simple_form.btn.show'), design, class: 'btn btn-light'
-        td = link_to t('simple_form.btn.edit'), edit_design_path(design), class: 'btn btn-light'
-        td = link_to t('simple_form.btn.destory'), design, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-light'
+        td
+          = link_to t('simple_form.btn.edit'), edit_design_path(design), class: 'btn btn-light' if design.user_eq?(current_user)
+        td
+          = link_to t('simple_form.btn.destory'), design, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-light' if design.user_eq?(current_user)
 
 br
 = paginate @designs

@@ -17,4 +17,9 @@ class Design < ApplicationRecord
   validates :name, presence: true
   validates :user, presence: true
 
+  # 作成者と一致するか？(※current_userを渡して、ログイン者とチェック)
+  def user_eq?(user)
+    self.user == user
+  end
+
 end
