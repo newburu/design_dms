@@ -25,7 +25,11 @@ h1 = t('activerecord.models.design')
     = f.collection_select :size_id_eq, @sizes, :id, :name, include_blank: true
     = f.label :sex_id
     = f.collection_select :sex_id_eq, @sexs, :id, :name, include_blank: true
-  = f.submit  class: "btn-primary"
+  .btn-toolbar
+    .btn-group.mr-2
+      = f.submit class: "btn btn-primary"
+    .btn-group.mr-2
+      = link_to t('helpers.submit.create'), new_design_path, class: "btn btn-secondary"
   p
 
 table.table.table-striped.table-hover.table-responsive.table-bordered
@@ -78,10 +82,8 @@ table.table.table-striped.table-hover.table-responsive.table-bordered
         td = design.user.name
         td = design.view_point
         td = design.download_point
-        td = link_to 'Show', design
-        td = link_to 'Edit', edit_design_path(design)
-        td = link_to 'Destroy', design, data: { confirm: 'Are you sure?' }, method: :delete
+        td = link_to t('simple_form.btn.show'), design, class: 'btn btn-light'
+        td = link_to t('simple_form.btn.edit'), edit_design_path(design), class: 'btn btn-light'
+        td = link_to t('simple_form.btn.destory'), design, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-light'
 
 br
-
-= link_to 'New Design', new_design_path

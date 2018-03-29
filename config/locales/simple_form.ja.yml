@@ -8,3 +8,7 @@ ja:
       message: '印のついている項目は入力が必須です。'
     error_notification:
       default_message: "エラーがあります。確認してください。"
+    btn:
+      show: '参照'
+      edit: '更新'
+      destory: '削除'
