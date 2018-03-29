@@ -5,6 +5,7 @@ class DesignsController < InheritedResources::Base
     
     @q = Design.ransack(params[:q])
     @designs = @q.result
+    @designs = @designs.page(params[:page])
     @genres = Genre.all
     @collar_types = CollarType.all
     @sleeve_types = SleeveType.all
