@@ -4,22 +4,22 @@
   .card-body
     .row
       - @new_designs.each do |design|
-        .ol-sm-6.col-md-3.mx-auto
+        .mx-auto
           .card.img-thumbnail
             #new_img.carousel.slide.mx-auto data-ride="carousel"
               .carousel-inner
                 - img_path = image_path "now_printing.png"
                 - img_path = design.design_img.thumb.url if design.design_img.present?
                 .carousel-item.active
-                  = image_tag img_path, size: "160x160", class: "d-block w-30", alt: t('activerecord.attributes.design.design_img')
+                  = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.design_img')
                 - img_path = image_path "now_printing.png"
                 - img_path = design.pattern_img.thumb.url if design.pattern_img.present?
                 .carousel-item
-                  = image_tag img_path, size: "160x160", class: "d-block w-30", alt: t('activerecord.attributes.design.pattern_img')
+                  = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.pattern_img')
                 - img_path = image_path "now_printing.png"
                 - img_path = design.finished_img.thumb.url if design.finished_img.present?
                 .carousel-item
-                  = image_tag img_path, size: "160x160", class: "d-block w-30", alt: t('activerecord.attributes.design.finished_img')
+                  = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.finished_img')
             .card-body.px-2.py-3
               h5.card-title
                 = design.name
