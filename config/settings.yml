@@ -3,3 +3,5 @@ system:
   url: 'https://design_dms.herokuapp.com/'
   twitter:
     url: 'https://twitter.com/'
+  portal:
+    limit: 10

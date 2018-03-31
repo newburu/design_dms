@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks" }
 
-  root 'designs#index'
+  root 'portals#index'
+
+  get '/portals', to: 'portals#index'
 
   # 静的ページ
   get 'static_pages/info'
