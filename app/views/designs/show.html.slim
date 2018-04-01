@@ -1,56 +1,82 @@
-p#notice = notice
-
-p
-  strong = "#{t('activerecord.attributes.design.name')}:"
-  = @design.name
-p
-  strong = "#{t('activerecord.attributes.design.genre')}:"
-  = @design.genre.try(:name)
-p
-  strong = "#{t('activerecord.attributes.design.collar_type')}:"
-  = @design.collar_type.try(:name)
-p
-  strong = "#{t('activerecord.attributes.design.sleeve_type')}:"
-  = @design.sleeve_type.try(:name)
-p
-  strong = "#{t('activerecord.attributes.design.cuff_type')}:"
-  = @design.cuff_type.try(:name)
-p
-  strong = "#{t('activerecord.attributes.design.swimsuit_type')}:"
-  = @design.swimsuit_type.try(:name)
-p
-  strong = "#{t('activerecord.attributes.design.tops_type')}:"
-  = @design.tops_type.try(:name)
-p
-  strong = "#{t('activerecord.attributes.design.skirt_type')}:"
-  = @design.skirt_type.try(:name)
-p
-  strong = "#{t('activerecord.attributes.design.size')}:"
-  = @design.size.try(:name)
-p
-  strong = "#{t('activerecord.attributes.design.sex')}:"
-  = @design.sex.try(:name)
-p
-  strong = "#{t('activerecord.attributes.design.memo')}:"
-  = @design.memo
-p
-  strong = "#{t('activerecord.attributes.design.design_img')}:"
-  = image_tag @design.design_img
-p
-  strong = "#{t('activerecord.attributes.design.pattern_img')}:"
-  = image_tag @design.pattern_img
-p
-  strong = "#{t('activerecord.attributes.design.finished_img')}:"
-  = image_tag @design.finished_img
-p
-  strong = "#{t('activerecord.attributes.design.view_point')}:"
-  = @design.view_point
-p
-  strong = "#{t('activerecord.attributes.design.download_point')}:"
-  = @design.download_point
+.table
+  .row
+    .col-sm-2
+      strong = "#{t('activerecord.attributes.design.name')}:"
+    .col-sm-8
+      = @design.name
+  .row
+    .col-sm-2
+      strong = "#{t('activerecord.attributes.design.genre')}:"
+    .col-sm-8
+      = @design.genre.try(:name)
+  .row
+    .col-sm-2
+      strong = "#{t('activerecord.attributes.design.collar_type')}:"
+    .col-sm-3
+      = @design.collar_type.try(:name)
+    .col-sm-2
+      strong = "#{t('activerecord.attributes.design.sleeve_type')}:"
+    .col-sm-3
+      = @design.sleeve_type.try(:name)
+  .row
+    .col-sm-2
+      strong = "#{t('activerecord.attributes.design.cuff_type')}:"
+    .col-sm-3
+      = @design.cuff_type.try(:name)
+    .col-sm-2
+      strong = "#{t('activerecord.attributes.design.swimsuit_type')}:"
+    .col-sm-3
+      = @design.swimsuit_type.try(:name)
+  .row
+    .col-sm-2
+      strong = "#{t('activerecord.attributes.design.tops_type')}:"
+    .col-sm-3
+      = @design.tops_type.try(:name)
+    .col-sm-2
+      strong = "#{t('activerecord.attributes.design.skirt_type')}:"
+    .col-sm-3
+      = @design.skirt_type.try(:name)
+  .row
+    .col-sm-2
+      strong = "#{t('activerecord.attributes.design.size')}:"
+    .col-sm-3
+      = @design.size.try(:name)
+    .col-sm-2
+      strong = "#{t('activerecord.attributes.design.sex')}:"
+    .col-sm-3
+      = @design.sex.try(:name)
+  .row
+    .col-sm-2
+      strong = "#{t('activerecord.attributes.design.memo')}:"
+    .col-sm-3
+      = @design.memo
+  .row
+    .col-sm-2
+      strong = "#{t('activerecord.attributes.design.design_img')}:"
+    .col-sm-3
+      = image_tag @design.design_img
+  .row
+    .col-sm-2
+      strong = "#{t('activerecord.attributes.design.pattern_img')}:"
+    .col-sm-3
+      = image_tag @design.pattern_img
+  .row
+    .col-sm-2
+      strong = "#{t('activerecord.attributes.design.finished_img')}:"
+    .col-sm-3
+      = image_tag @design.finished_img
+  .row
+    .col-sm-2
+      strong = "#{t('activerecord.attributes.design.view_point')}:"
+    .col-sm-3
+      = @design.view_point
+    .col-sm-2
+      strong = "#{t('activerecord.attributes.design.download_point')}:"
+    .col-sm-3
+      = @design.download_point
 
 .btn-toolbar
   .btn-group.mr-2
-    = link_to 'Edit', edit_design_path(@design) if @design.user_eq?(current_user)
+    = link_to 'Edit', edit_design_path(@design), class: "btn btn-primary" if @design.user_eq?(current_user)
   .btn-group.mr-2
-    = link_to 'Back', designs_path
+    = link_to 'Back', designs_path, class: "btn btn-primary"
