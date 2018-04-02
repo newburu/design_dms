@@ -1,30 +1,30 @@
 h1 = t('activerecord.models.design')
 
 = search_form_for @q do |f|
-  p
-    = f.label :name
-    = f.search_field :name_cont
-  p
-    = f.label :genre_id
-    = f.collection_select :genre_id_eq, @genres, :id, :name, include_blank: true
-  p
-    = f.label :collar_type_id
-    = f.collection_select :collar_type_id_eq, @collar_types, :id, :name, include_blank: true
-    = f.label :sleeve_type_id
-    = f.collection_select :sleeve_type_id_eq, @sleeve_types, :id, :name, include_blank: true
-    = f.label :cuff_type_id
-    = f.collection_select :cuff_type_id_eq, @cuff_types, :id, :name, include_blank: true
-    = f.label :swimsuit_type_id
-    = f.collection_select :swimsuit_type_id_eq, @swimsuit_types, :id, :name, include_blank: true
-    = f.label :tops_type_id
-    = f.collection_select :tops_type_id_eq, @tops_types, :id, :name, include_blank: true
-    = f.label :skirt_type_id
-    = f.collection_select :skirt_type_id_eq, @skirt_types, :id, :name, include_blank: true
-  p
-    = f.label :size_id
-    = f.collection_select :size_id_eq, @sizes, :id, :name, include_blank: true
-    = f.label :sex_id
-    = f.collection_select :sex_id_eq, @sexs, :id, :name, include_blank: true
+  .row
+    .col-sm-5
+      = f.input :name_cont, required: false, label: t('activerecord.attributes.design.name')
+  .row
+    .col-sm-5
+      = f.input :genre_id_eq, collection: @genres, label_method: :name,value_method: :id, include_blank: true, required: false, label: t('activerecord.attributes.design.genre')
+  .row
+    .col-sm-2
+      = f.input :collar_type_id_eq, collection: @collar_types, label_method: :name, value_method: :id, include_blank: true, required: false, label: t('activerecord.attributes.design.collar_type')
+    .col-sm-2
+      = f.input :sleeve_type_id_eq, collection: @sleeve_types, label_method: :name, value_method: :id, include_blank: true, required: false, label: t('activerecord.attributes.design.sleeve_type')
+    .col-sm-2
+      = f.input :cuff_type_id_eq, collection: @cuff_types, label_method: :name, value_method: :id, include_blank: true, required: false, label: t('activerecord.attributes.design.cuff_type')
+    .col-sm-2
+      = f.input :swimsuit_type_id_eq, collection: @swimsuit_types, label_method: :name, value_method: :id, include_blank: true, required: false, label: t('activerecord.attributes.design.swimsuit_type')
+    .col-sm-2
+      = f.input :tops_type_id_eq, collection: @tops_types, label_method: :name, value_method: :id, include_blank: true, required: false, label: t('activerecord.attributes.design.tops_type')
+    .col-sm-2
+      = f.input :skirt_type_id_eq, collection: @skirt_types, label_method: :name, value_method: :id, include_blank: true, required: false, label: t('activerecord.attributes.design.skirt_type')
+  .row
+    .col-sm-4
+      = f.input :size_id_eq, collection: @sizes, label_method: :name, value_method: :id, include_blank: true, required: false, label: t('activerecord.attributes.design.size')
+    .col-sm-4
+      = f.input :sex_id_eq, collection: @sexs, label_method: :name, value_method: :id, include_blank: true, required: false, label: t('activerecord.attributes.design.sex')
   .btn-toolbar
     .btn-group.mr-2
       = f.submit class: "btn btn-primary"
