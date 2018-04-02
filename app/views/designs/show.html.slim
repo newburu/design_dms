@@ -1,87 +1,118 @@
-.table
-  .row
-    .col-sm-2
-      strong = "#{t('activerecord.attributes.design.name')}:"
-    .col-sm-8
-      = @design.name
-  .row
-    .col-sm-2
-      strong = "#{t('activerecord.attributes.design.genre')}:"
-    .col-sm-8
-      = @design.genre.try(:name)
-  .row
-    .col-sm-2
-      strong = "#{t('activerecord.attributes.design.collar_type')}:"
-    .col-sm-3
-      = @design.collar_type.try(:name)
-    .col-sm-2
-      strong = "#{t('activerecord.attributes.design.sleeve_type')}:"
-    .col-sm-3
-      = @design.sleeve_type.try(:name)
-  .row
-    .col-sm-2
-      strong = "#{t('activerecord.attributes.design.cuff_type')}:"
-    .col-sm-3
-      = @design.cuff_type.try(:name)
-    .col-sm-2
-      strong = "#{t('activerecord.attributes.design.swimsuit_type')}:"
-    .col-sm-3
-      = @design.swimsuit_type.try(:name)
-  .row
-    .col-sm-2
-      strong = "#{t('activerecord.attributes.design.tops_type')}:"
-    .col-sm-3
-      = @design.tops_type.try(:name)
-    .col-sm-2
-      strong = "#{t('activerecord.attributes.design.skirt_type')}:"
-    .col-sm-3
-      = @design.skirt_type.try(:name)
-  .row
-    .col-sm-2
-      strong = "#{t('activerecord.attributes.design.size')}:"
-    .col-sm-3
-      = @design.size.try(:name)
-    .col-sm-2
-      strong = "#{t('activerecord.attributes.design.sex')}:"
-    .col-sm-3
-      = @design.sex.try(:name)
-  .row
-    .col-sm-2
-      strong = "#{t('activerecord.attributes.design.open_type')}:"
-    .col-sm-3
-      = @design.open_type.try(:name)
-  .row
-    .col-sm-2
-      strong = "#{t('activerecord.attributes.design.memo')}:"
-    .col-sm-3
-      = @design.memo
-  .row
-    .col-sm-2
-      strong = "#{t('activerecord.attributes.design.design_img')}:"
-    .col-sm-3
-      = image_tag @design.design_img
-  .row
-    .col-sm-2
-      strong = "#{t('activerecord.attributes.design.pattern_img')}:"
-    .col-sm-3
-      = image_tag @design.pattern_img
-  .row
-    .col-sm-2
-      strong = "#{t('activerecord.attributes.design.finished_img')}:"
-    .col-sm-3
-      = image_tag @design.finished_img
-  .row
-    .col-sm-2
-      strong = "#{t('activerecord.attributes.design.view_point')}:"
-    .col-sm-3
-      = @design.view_point
-    .col-sm-2
-      strong = "#{t('activerecord.attributes.design.download_point')}:"
-    .col-sm-3
-      = @design.download_point
+h1 参照
+hr
+.card
+  .card-header
+    strong = "#{t('activerecord.attributes.design.name')}:"
+  .card-body
+    = @design.name
 
+.card
+  .card-header
+    strong = "#{t('activerecord.attributes.design.genre')}:"
+  .card-body
+    = @design.genre.try(:name)
+
+.row
+  .col-sm-2
+    .card
+      .card-header
+        strong = "#{t('activerecord.attributes.design.collar_type')}:"
+      .card-body
+        = @design.collar_type.try(:name)
+  .col-sm-2
+    .card
+      .card-header
+        strong = "#{t('activerecord.attributes.design.sleeve_type')}:"
+      .card-body
+        = @design.sleeve_type.try(:name)
+  .col-sm-2
+    .card
+      .card-header
+        strong = "#{t('activerecord.attributes.design.cuff_type')}:"
+      .card-body
+        = @design.cuff_type.try(:name)
+  .col-sm-2
+    .card
+      .card-header
+        strong = "#{t('activerecord.attributes.design.swimsuit_type')}:"
+      .card-body
+        = @design.swimsuit_type.try(:name)
+  .col-sm-2
+    .card
+      .card-header
+        strong = "#{t('activerecord.attributes.design.tops_type')}:"
+      .card-body
+        = @design.tops_type.try(:name)
+  .col-sm-2
+    .card
+      .card-header
+        strong = "#{t('activerecord.attributes.design.skirt_type')}:"
+      .card-body
+        = @design.skirt_type.try(:name)
+.row
+  .col-sm-4
+    .card
+      .card-header
+        strong = "#{t('activerecord.attributes.design.size')}:"
+      .card-body
+        = @design.size.try(:name)
+  .col-sm-4
+    .card
+      .card-header
+        strong = "#{t('activerecord.attributes.design.sex')}:"
+      .card-body
+        = @design.sex.try(:name)
+  .col-sm-4
+    .card
+      .card-header
+        strong = "#{t('activerecord.attributes.design.open_type')}:"
+      .card-body
+        = @design.open_type.try(:name)
+.row
+  .col-sm-12
+    .card
+      .card-header
+        strong = "#{t('activerecord.attributes.design.memo')}:"
+      .card-body
+        = @design.memo
+
+.row
+  .col-sm-4
+    .card
+      .card-header
+        strong = "#{t('activerecord.attributes.design.design_img')}:"
+      .card-body
+        = image_tag @design.design_img
+  .col-sm-4
+    .card
+      .card-header
+        strong = "#{t('activerecord.attributes.design.pattern_img')}:"
+      .card-body
+        = image_tag @design.pattern_img
+  .col-sm-4
+    .card
+      .card-header
+        strong = "#{t('activerecord.attributes.design.finished_img')}:"
+      .card-body
+        = image_tag @design.finished_img
+
+.row
+  .col-sm-6
+    .card
+      .card-header
+        strong = "#{t('activerecord.attributes.design.view_point')}:"
+      .card-body
+        = @design.view_point
+  .col-sm-6
+    .card
+      .card-header
+        strong = "#{t('activerecord.attributes.design.download_point')}:"
+      .card-body
+        = @design.download_point
+hr
 .btn-toolbar
   .btn-group.mr-2
     = link_to 'Edit', edit_design_path(@design), class: "btn btn-primary" if @design.user_eq?(current_user)
   .btn-group.mr-2
     = link_to 'Back', designs_path, class: "btn btn-primary"
+hr
