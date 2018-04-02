@@ -34,6 +34,8 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_hash (1.5.2)
+      activesupport (>= 2.2.2)
     activejob (5.1.5)
       activesupport (= 5.1.5)
       globalid (>= 0.3.6)
@@ -396,6 +398,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_hash
   activerecord-session_store
   better_errors
   binding_of_caller

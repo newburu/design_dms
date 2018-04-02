@@ -125,3 +125,5 @@ gem 'ransack'
 # ページネーション
 gem 'kaminari'
 
+gem 'active_hash'
+

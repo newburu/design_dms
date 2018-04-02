@@ -5,27 +5,30 @@
     = f.input :name
     .row
       .col-sm-5
-        = f.association :genre, prompt: true
+        = f.association :genre, include_blank: t('helpers.select.prompt')
     .row
       .col-sm-5
-        = f.association :collar_type, prompt: true
+        = f.association :collar_type, include_blank: t('helpers.select.prompt')
       .col-sm-5
-        = f.association :sleeve_type, prompt: true
+        = f.association :sleeve_type, include_blank: t('helpers.select.prompt')
     .row
       .col-sm-5
-        = f.association :cuff_type, prompt: true
+        = f.association :cuff_type, include_blank: t('helpers.select.prompt')
       .col-sm-5
-        = f.association :swimsuit_type, prompt: true
+        = f.association :swimsuit_type, include_blank: t('helpers.select.prompt')
     .row
       .col-sm-5
-        = f.association :tops_type, prompt: true
+        = f.association :tops_type, include_blank: t('helpers.select.prompt')
       .col-sm-5
-        = f.association :skirt_type, prompt: true
+        = f.association :skirt_type, include_blank: t('helpers.select.prompt')
     .row
       .col-sm-5
-        = f.association :size, prompt: true
+        = f.association :size, include_blank: t('helpers.select.prompt')
       .col-sm-5
-        = f.association :sex, prompt: true
+        = f.association :sex, include_blank: t('helpers.select.prompt')
+    .row
+      .col-sm-10
+        = f.association :open_type
     = f.input :memo
     = f.input :design_img, input_html: { class: "form-control"}
     = f.input :pattern_img, input_html: { class: "form-control"}

@@ -50,6 +50,7 @@ table.table.table-striped.table-hover.table-responsive.table-bordered
       th = sort_link(@q, :pattern_img)
       th = sort_link(@q, :finished_img)
       th = sort_link(@q, :user)
+      th = sort_link(@q, :open_type_id)
       th = sort_link(@q, :view_point)
       th = sort_link(@q, :download_point)
       th
@@ -80,6 +81,7 @@ table.table.table-striped.table-hover.table-responsive.table-bordered
           .thumbnail
             = image_tag design.finished_img.thumb.url if design.finished_img.present?
         td = design.user.name
+        td = design.open_type.try(:name)
         td = design.view_point
         td = design.download_point
         td = link_to t('simple_form.btn.show'), design, class: 'btn btn-light'

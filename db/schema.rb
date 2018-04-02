@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180323124804) do
+ActiveRecord::Schema.define(version: 20180402093011) do
 
   create_table "collar_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "name"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20180323124804) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.integer "open_type_id", default: 0
     t.index ["collar_type_id"], name: "index_designs_on_collar_type_id"
     t.index ["cuff_type_id"], name: "index_designs_on_cuff_type_id"
     t.index ["genre_id"], name: "index_designs_on_genre_id"

@@ -1,4 +1,6 @@
 class Design < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  
   belongs_to :genre, optional: true
   belongs_to :collar_type, optional: true
   belongs_to :sleeve_type, optional: true
@@ -9,6 +11,7 @@ class Design < ApplicationRecord
   belongs_to :size, optional: true
   belongs_to :sex, optional: true
   belongs_to :user
+  belongs_to_active_hash :open_type, optional: true
 
   mount_uploader :design_img, ImageUploader
   mount_uploader :pattern_img, ImageUploader

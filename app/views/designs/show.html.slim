@@ -47,6 +47,11 @@
       = @design.sex.try(:name)
   .row
     .col-sm-2
+      strong = "#{t('activerecord.attributes.design.open_type')}:"
+    .col-sm-3
+      = @design.open_type.try(:name)
+  .row
+    .col-sm-2
       strong = "#{t('activerecord.attributes.design.memo')}:"
     .col-sm-3
       = @design.memo

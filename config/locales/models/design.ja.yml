@@ -29,5 +29,8 @@ ja:
         pattern_img: 型紙
         finished_img: 完成
         user: 登録者
+        user_id: 登録者
+        open_type: 公開範囲
+        open_type_id: 公開範囲
         view_point: 参照数
         download_point: ダウンロード数
