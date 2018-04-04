@@ -1,71 +1,130 @@
-ul.nav.nav-tabs
-  li.nav-item
-    = link_to "#tab1", class: "nav-link active", data: {toggle: "tab"}
-      = "新着"
-  li.nav-item
-    = link_to "#tab2", class: "nav-link", data: {toggle: "tab"}
-      = "ランキング"
-.tab-content
-  #tab1.tab-pane.active
-    .card
-      .card-body
-        .row
-          - @new_designs.each do |design|
-            .mx-auto
-              .card.img-thumbnail
-                #new_img.carousel.slide.mx-auto data-ride="carousel"
-                  .carousel-inner
-                    - img_path = image_path "now_printing.png"
-                    - img_path = design.design_img.thumb.url if design.design_img.present?
-                    .carousel-item.active
-                      = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.design_img')
-                    - img_path = image_path "now_printing.png"
-                    - img_path = design.pattern_img.thumb.url if design.pattern_img.present?
-                    .carousel-item
-                      = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.pattern_img')
-                    - img_path = image_path "now_printing.png"
-                    - img_path = design.finished_img.thumb.url if design.finished_img.present?
-                    .carousel-item
-                      = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.finished_img')
-                .card-body.px-2.py-3
-                  h5.card-title
-                    = design.name
-                  p.card-text
-                    = "#{t('activerecord.attributes.design.view_point')}:#{design.view_point}"
-                    br
-                    = "#{t('activerecord.attributes.design.user')}:#{design.user.name}"
-                  p.mb-0
-                    = link_to design_path(design.id), class: "btn btn-primary btn-sm"
-                      = t('simple_form.btn.show')
-  #tab2.tab-pane
-    .card
-      .card-body
-        .row
-          - @ranking_designs.each do |design|
-            .mx-auto
-              .card.img-thumbnail
-                #new_img.carousel.slide.mx-auto data-ride="carousel"
-                  .carousel-inner
-                    - img_path = image_path "now_printing.png"
-                    - img_path = design.design_img.thumb.url if design.design_img.present?
-                    .carousel-item.active
-                      = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.design_img')
-                    - img_path = image_path "now_printing.png"
-                    - img_path = design.pattern_img.thumb.url if design.pattern_img.present?
-                    .carousel-item
-                      = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.pattern_img')
-                    - img_path = image_path "now_printing.png"
-                    - img_path = design.finished_img.thumb.url if design.finished_img.present?
-                    .carousel-item
-                      = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.finished_img')
-                .card-body.px-2.py-3
-                  h5.card-title
-                    = design.name
-                  p.card-text
-                    = "#{t('activerecord.attributes.design.view_point')}:#{design.view_point}"
-                    br
-                    = "#{t('activerecord.attributes.design.user')}:#{design.user.name}"
-                  p.mb-0
-                    = link_to design_path(design.id), class: "btn btn-primary btn-sm"
-                      = t('simple_form.btn.show')
-                      
+.main1-app
+  .container
+    .row
+      .col-sm-12
+        ul.nav.nav-tabs
+          li.nav-item
+            = link_to "#tab1", class: "nav-link active", data: {toggle: "tab"}
+              = "新着"
+          li.nav-item
+            = link_to "#tab2", class: "nav-link", data: {toggle: "tab"}
+              = "ランキング"
+        .tab-content
+          #tab1.tab-pane.active
+            .card.skeleton
+              .card-body
+                .row
+                  - @new_designs.each do |design|
+                    .mx-auto
+                      .card.img-thumbnail
+                        #new_img.carousel.slide.mx-auto data-ride="carousel"
+                          .carousel-inner
+                            - img_path = image_path "now_printing.png"
+                            - img_path = design.design_img.thumb.url if design.design_img.present?
+                            .carousel-item.active
+                              = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.design_img')
+                            - img_path = image_path "now_printing.png"
+                            - img_path = design.pattern_img.thumb.url if design.pattern_img.present?
+                            .carousel-item
+                              = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.pattern_img')
+                            - img_path = image_path "now_printing.png"
+                            - img_path = design.finished_img.thumb.url if design.finished_img.present?
+                            .carousel-item
+                              = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.finished_img')
+                        .card-body.px-2.py-3
+                          h5.card-title
+                            = design.name
+                          p.card-text
+                            = "#{t('activerecord.attributes.design.view_point')}:#{design.view_point}"
+                            br
+                            = "#{t('activerecord.attributes.design.user')}:#{design.user.name}"
+                          p.mb-0
+                            = link_to design_path(design.id), class: "btn btn-primary btn-sm"
+                              = t('simple_form.btn.show')
+          #tab2.tab-pane
+            .card.skeleton
+              .card-body
+                .row
+                  - @ranking_designs.each do |design|
+                    .mx-auto
+                      .card.img-thumbnail
+                        #new_img.carousel.slide.mx-auto data-ride="carousel"
+                          .carousel-inner
+                            - img_path = image_path "now_printing.png"
+                            - img_path = design.design_img.thumb.url if design.design_img.present?
+                            .carousel-item.active
+                              = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.design_img')
+                            - img_path = image_path "now_printing.png"
+                            - img_path = design.pattern_img.thumb.url if design.pattern_img.present?
+                            .carousel-item
+                              = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.pattern_img')
+                            - img_path = image_path "now_printing.png"
+                            - img_path = design.finished_img.thumb.url if design.finished_img.present?
+                            .carousel-item
+                              = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.finished_img')
+                        .card-body.px-2.py-3
+                          h5.card-title
+                            = design.name
+                          p.card-text
+                            = "#{t('activerecord.attributes.design.view_point')}:#{design.view_point}"
+                            br
+                            = "#{t('activerecord.attributes.design.user')}:#{design.user.name}"
+                          p.mb-0
+                            = link_to design_path(design.id), class: "btn btn-primary btn-sm"
+                              = t('simple_form.btn.show')
+
+.main2-app
+  .container
+    .row
+      .col-sm-12
+        h2
+          = "あなたの作った型紙を共有して、服飾の輪を広げよう！"
+          p
+            = "自分だけでのナレッジとして持っているのも良いですが、"
+            br
+            = "みんなで共有して、楽しい服飾ライフを過ごしませんか？！"
+    br
+    br
+    br
+    br
+    .row
+      .col-sm-4
+        .main2-sub
+          h3
+            = "カテゴライズ"
+            p
+              = "詳細にカテゴライズ出来るため、目的のデザインを簡単に見つけることが可能です。"
+      .col-sm-4
+        .main2-sub
+          h3
+            = "公開範囲"
+            p
+              = "「全体公開」「フォロワーのみ」「自分のみ公開」の公開範囲が選択可能です。"
+              = "これにより、仲間内での共有はもちろん、自分だけのナレッジとしても利用可能です。"
+      .col-sm-4
+        .main2-sub
+          h3
+            = "Twitter連携"
+            p
+              = "Twitterと連携しているため、作成者への連絡・使用許可などがスムーズに行えます。"
+
+.main3-app
+  .container
+    .row
+      .col-sm-5
+        = image_tag "circle.jpg", class: "img-responsive center-block"
+      .col-sm-7
+        h2
+          = "もっと共有して、輪を広げよう！"
+          br
+          br
+          p
+            = "当サイトの拡散にご協力ください。"
+            br
+            = "みんなで共有して、楽しい服飾ライフを過ごそう！"
+          br
+          br
+          p
+            = link_to Settings.system[:twitter][:share_url] + "text=あなたの作った型紙を共有して、服飾の輪を広げよう！%0a%0a＃" + "#{Settings.system[:title]}%0a", {class: "btn btn-social btn-twitter", target: "_blank"}
+              i.fa.fa-twitter.left
+              = "Twitterで共有"
