@@ -21,15 +21,15 @@
                           .carousel-inner
                             - img_path = image_path "now_printing.png"
                             - img_path = design.design_img.thumb.url if design.design_img.present?
-                            .carousel-item.active
+                            .carousel-item.thumb.active
                               = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.design_img')
                             - img_path = image_path "now_printing.png"
                             - img_path = design.pattern_img.thumb.url if design.pattern_img.present?
-                            .carousel-item
+                            .carousel-item.thumb
                               = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.pattern_img')
                             - img_path = image_path "now_printing.png"
                             - img_path = design.finished_img.thumb.url if design.finished_img.present?
-                            .carousel-item
+                            .carousel-item.thumb
                               = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.finished_img')
                         .card-body.px-2.py-3
                           h5.card-title
@@ -52,15 +52,15 @@
                           .carousel-inner
                             - img_path = image_path "now_printing.png"
                             - img_path = design.design_img.thumb.url if design.design_img.present?
-                            .carousel-item.active
+                            .carousel-item.thumb.active
                               = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.design_img')
                             - img_path = image_path "now_printing.png"
                             - img_path = design.pattern_img.thumb.url if design.pattern_img.present?
-                            .carousel-item
+                            .carousel-item.thumb
                               = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.pattern_img')
                             - img_path = image_path "now_printing.png"
                             - img_path = design.finished_img.thumb.url if design.finished_img.present?
-                            .carousel-item
+                            .carousel-item.thumb
                               = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.finished_img')
                         .card-body.px-2.py-3
                           h5.card-title
@@ -93,11 +93,15 @@
           h3
             = "カテゴライズ"
             p
+              = image_tag "bunbetu.jpg", size: "250x250"
+            p
               = "詳細にカテゴライズ出来るため、目的のデザインを簡単に見つけることが可能です。"
       .col-sm-4
         .main2-sub
           h3
             = "公開範囲"
+            p
+              = image_tag "open_area.jpg", size: "250x250"
             p
               = "「全体公開」「フォロワーのみ」「自分のみ公開」の公開範囲が選択可能です。"
               = "これにより、仲間内での共有はもちろん、自分だけのナレッジとしても利用可能です。"
@@ -105,6 +109,8 @@
         .main2-sub
           h3
             = "Twitter連携"
+            p
+              = image_tag "sns.jpg", size: "250x250"
             p
               = "Twitterと連携しているため、作成者への連絡・使用許可などがスムーズに行えます。"
 
