@@ -2,7 +2,8 @@ class User < ApplicationRecord
   devise :trackable, :omniauthable
   
   # 現在のフレンド（フォロー）さん一覧
-  has_many :friends
+  has_many :user_friend_users
+  has_many :friends, through: :user_friend_users
   accepts_nested_attributes_for :friends
 
   # 設定

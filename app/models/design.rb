@@ -25,4 +25,19 @@ class Design < ApplicationRecord
     self.user == user
   end
 
+  # ユーザが参照可能か？(※current_userを渡して、ログイン者とチェック)
+  def can_view?(user)
+    flg = false
+    # 全体公開
+    flg = true if self.open_type == OpenType::ALL
+    if user.present?
+      # 自分のみ
+      flg = true if self.open_type == OpenType::MY_ONLY && self.user == user
+      # フォロワーのみ
+      flg = true if self.open_type == OpenType::FOLLOWER_ONLY && (self.user == user || user.friends.include?(self.user))
+    end
+    
+    flg
+  end
+
 end

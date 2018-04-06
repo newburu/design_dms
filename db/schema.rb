@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180402093011) do
+ActiveRecord::Schema.define(version: 20180405121411) do
 
   create_table "collar_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "name"
@@ -120,6 +120,14 @@ ActiveRecord::Schema.define(version: 20180402093011) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_friend_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.bigint "user_id"
+    t.integer "friend_user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_friend_users_on_user_id"
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.integer "sign_in_count", default: 0
     t.datetime "current_sign_in_at"
@@ -148,4 +156,5 @@ ActiveRecord::Schema.define(version: 20180402093011) do
   add_foreign_key "designs", "swimsuit_types"
   add_foreign_key "designs", "tops_types"
   add_foreign_key "designs", "users"
+  add_foreign_key "user_friend_users", "users"
 end
