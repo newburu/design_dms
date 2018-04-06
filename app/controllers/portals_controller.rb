@@ -1,6 +1,9 @@
 class PortalsController < ApplicationController
   
   def index
+    # フォロー情報を更新
+    current_user.update_friends(twitter_client) if current_user.present?
+    
     new_designs = Design.all.order(created_at: "DESC")
     ranking_designs = Design.all.order(view_point: "DESC")
     

@@ -57,16 +57,13 @@ class User < ApplicationRecord
       friends = friend_ids.each_slice(100).to_a.inject ([]) do |users, ids|
         users.concat(client.users(ids))
       end
+      user_friends = []
       friends.each do |f|
-        friend = Friend.new(user: self, uid: f.id, name: f.name, screen_name: f.screen_name)
-        self.friends << friend
-      end
-      self.followers.each do |f|
-        # フォロワーの状態チェック
-        f.check_status
+        friend = User.find_by(uid: f.id)
+        user_friends << UserFriendUser.new(user: self, friend: friend) if friend.present?
       end
 
-      self.save
+      UserFriendUser.import user_friends
       
     rescue Twitter::Error::TooManyRequests => error
       sleep error.rate_limit.reset_in

@@ -34,6 +34,7 @@ class Design < ApplicationRecord
       # 自分のみ
       flg = true if self.open_type == OpenType::MY_ONLY && self.user == user
       # フォロワーのみ
+      user = User.find(user.id)
       flg = true if self.open_type == OpenType::FOLLOWER_ONLY && (self.user == user || user.friends.include?(self.user))
     end
     
