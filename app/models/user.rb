@@ -46,7 +46,8 @@ class User < ApplicationRecord
   end
 
   # フレンド（フォロー）さん一覧を更新
-  def update_friends(client)
+  def update_friends
+    client = twitter_client
     # Twitterから取得
     begin
       # 入れ直す為に、全削除

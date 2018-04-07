@@ -3,7 +3,22 @@ class DesignsController < InheritedResources::Base
   def index
     redirect_to static_pages_info_url unless current_user.present?
     
-    @q = Design.ransack(params[:q])
+    # 全体公開ならOK
+    con = {
+      g: {
+        '0' => {
+          m: 'or',
+          g: {
+            '0' => { m: 'and', open_type_id_eq: OpenType::ALL.id },
+            '1' => { m: 'and', open_type_id_eq: OpenType::MY_ONLY.id, user_id_eq: current_user.id },
+            '2' => { m: 'and', open_type_id_eq: OpenType::FOLLOWER_ONLY.id, user_id_eq: current_user.id }
+          }
+        },
+      }
+    }
+    con[:g]['1'] = params[:q].to_unsafe_h if params[:q].present?
+    @q = Design.ransack(con)
+    
     @designs = @q.result
     @designs = @designs.page(params[:page])
     @genres = Genre.all
@@ -46,5 +61,6 @@ class DesignsController < InheritedResources::Base
       ret[:user] = current_user
       ret
     end
+
 end
 
