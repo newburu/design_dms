@@ -16,7 +16,7 @@ class DesignsController < InheritedResources::Base
         },
       }
     }
-    con[:g]['1'] = params[:q].to_unsafe_h if params[:q].present?
+    con = con.merge(params[:q].to_unsafe_h) if params[:q].present?
     @q = Design.ransack(con)
     
     @designs = @q.result
