@@ -1,21 +1,29 @@
-h1 Listing skirt_types
-
-table
+h1 = t('activerecord.models.skirt_type')
+hr
+= search_form_for @q do |f|
+  .row
+    .col-sm-5
+      = f.input :name_cont, required: false, label: t('activerecord.attributes.skirt_type.name')
+      = hidden_field_tag :mode, params[:mode]
+  .btn-toolbar
+    .btn-group.mr-2
+      = f.submit class: "btn btn-primary"
+    .btn-group.mr-2
+      = button_tag t('helpers.submit.close'), type: 'button', class: "btn btn-secondary", onclick: 'window.close()'
+p
+table.table.table-striped.table-hover.table-responsive.table-bordered
   thead
     tr
-      th Name
-      th
-      th
-      th
-
+      th = sort_link(@q, :name)
   tbody
     - @skirt_types.each do |skirt_type|
       tr
-        td = skirt_type.name
-        td = link_to 'Show', skirt_type
-        td = link_to 'Edit', edit_skirt_type_path(skirt_type)
-        td = link_to 'Destroy', skirt_type, data: { confirm: 'Are you sure?' }, method: :delete
+      - if params[:mode] = 'dialog'
+        td onclick="window.opener.dialog_select('skirt_type', '#{skirt_type.name}', 'skirt_type_id', '#{skirt_type.id}');window.close();"
+          = skirt_type.name
+      - else
+        td
+          = skirt_type.name
 
 br
-
-= link_to 'New Skirt type', new_skirt_type_path
+= paginate @skirt_types

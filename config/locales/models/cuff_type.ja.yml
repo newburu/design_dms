@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      cuff_type: 袖口種類
+    attributes:
+      cuff_type:
+        name: 名前

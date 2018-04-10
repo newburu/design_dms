@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      tops_type: トップス種類
+    attributes:
+      tops_type:
+        name: 名前

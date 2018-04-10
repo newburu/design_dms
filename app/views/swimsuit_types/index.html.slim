@@ -1,21 +1,29 @@
-h1 Listing swimsuit_types
-
-table
+h1 = t('activerecord.models.swimsuit_type')
+hr
+= search_form_for @q do |f|
+  .row
+    .col-sm-5
+      = f.input :name_cont, required: false, label: t('activerecord.attributes.swimsuit_type.name')
+      = hidden_field_tag :mode, params[:mode]
+  .btn-toolbar
+    .btn-group.mr-2
+      = f.submit class: "btn btn-primary"
+    .btn-group.mr-2
+      = button_tag t('helpers.submit.close'), type: 'button', class: "btn btn-secondary", onclick: 'window.close()'
+p
+table.table.table-striped.table-hover.table-responsive.table-bordered
   thead
     tr
-      th Name
-      th
-      th
-      th
-
+      th = sort_link(@q, :name)
   tbody
     - @swimsuit_types.each do |swimsuit_type|
       tr
-        td = swimsuit_type.name
-        td = link_to 'Show', swimsuit_type
-        td = link_to 'Edit', edit_swimsuit_type_path(swimsuit_type)
-        td = link_to 'Destroy', swimsuit_type, data: { confirm: 'Are you sure?' }, method: :delete
+      - if params[:mode] = 'dialog'
+        td onclick="window.opener.dialog_select('swimsuit_type', '#{swimsuit_type.name}', 'swimsuit_type_id', '#{swimsuit_type.id}');window.close();"
+          = swimsuit_type.name
+      - else
+        td
+          = swimsuit_type.name
 
 br
-
-= link_to 'New Swimsuit type', new_swimsuit_type_path
+= paginate @swimsuit_types

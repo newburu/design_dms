@@ -1,21 +1,29 @@
-h1 Listing collar_types
-
-table
+h1 = t('activerecord.models.collar_type')
+hr
+= search_form_for @q do |f|
+  .row
+    .col-sm-5
+      = f.input :name_cont, required: false, label: t('activerecord.attributes.collar_type.name')
+      = hidden_field_tag :mode, params[:mode]
+  .btn-toolbar
+    .btn-group.mr-2
+      = f.submit class: "btn btn-primary"
+    .btn-group.mr-2
+      = button_tag t('helpers.submit.close'), type: 'button', class: "btn btn-secondary", onclick: 'window.close()'
+p
+table.table.table-striped.table-hover.table-responsive.table-bordered
   thead
     tr
-      th Name
-      th
-      th
-      th
-
+      th = sort_link(@q, :name)
   tbody
     - @collar_types.each do |collar_type|
       tr
-        td = collar_type.name
-        td = link_to 'Show', collar_type
-        td = link_to 'Edit', edit_collar_type_path(collar_type)
-        td = link_to 'Destroy', collar_type, data: { confirm: 'Are you sure?' }, method: :delete
+      - if params[:mode] = 'dialog'
+        td onclick="window.opener.dialog_select('collar_type', '#{collar_type.name}', 'collar_type_id', '#{collar_type.id}');window.close();"
+          = collar_type.name
+      - else
+        td
+          = collar_type.name
 
 br
-
-= link_to 'New Collar type', new_collar_type_path
+= paginate @collar_types

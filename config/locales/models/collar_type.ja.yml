@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      collar_type: 襟種類
+    attributes:
+      collar_type:
+        name: 名前

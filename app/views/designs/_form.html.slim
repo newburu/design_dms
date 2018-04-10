@@ -4,30 +4,48 @@
   .form-inputs.table
     = f.input :name
     .row
-      .col-sm-5
+      .col-sm-12
         = f.association :genre, include_blank: t('helpers.select.prompt')
     .row
-      .col-sm-5
-        = f.association :collar_type, include_blank: t('helpers.select.prompt')
-      .col-sm-5
-        = f.association :sleeve_type, include_blank: t('helpers.select.prompt')
+      .col-sm-4
+        = f.input :collar_type, readonly: true, input_html: {id: "collar_type", value: "#{@design.collar_type.try(:name)}"}
+        = f.input :collar_type_id, as: 'hidden', input_html: {id: "collar_type_id"}
+      .col-sm-2
+        = button_tag '選択', type: "button", class: "btn btn-lg btn-primary align-bottom", onclick: "open_window('collar_type')"
+      .col-sm-4
+        = f.input :sleeve_type, readonly: true, input_html: {id: "sleeve_type", value: "#{@design.sleeve_type.try(:name)}"}
+        = f.input :sleeve_type_id, as: 'hidden', input_html: {id: "sleeve_type_id"}
+      .col-sm-2
+        = button_tag '選択', type: "button", class: "btn btn-lg btn-primary align-bottom", onclick: "open_window('sleeve_type')"
     .row
-      .col-sm-5
-        = f.association :cuff_type, include_blank: t('helpers.select.prompt')
-      .col-sm-5
-        = f.association :swimsuit_type, include_blank: t('helpers.select.prompt')
+      .col-sm-4
+        = f.input :cuff_type, readonly: true, input_html: {id: "cuff_type", value: "#{@design.cuff_type.try(:name)}"}
+        = f.input :cuff_type_id, as: 'hidden', input_html: {id: "cuff_type_id"}
+      .col-sm-2
+        = button_tag '選択', type: "button", class: "btn btn-lg btn-primary align-bottom", onclick: "open_window('cuff_type')"
+      .col-sm-4
+        = f.input :swimsuit_type, readonly: true, input_html: {id: "swimsuit_type", value: "#{@design.swimsuit_type.try(:name)}"}
+        = f.input :swimsuit_type_id, as: 'hidden', input_html: {id: "swimsuit_type_id"}
+      .col-sm-2
+        = button_tag '選択', type: "button", class: "btn btn-lg btn-primary align-bottom", onclick: "open_window('swimsuit_type')"
     .row
-      .col-sm-5
-        = f.association :tops_type, include_blank: t('helpers.select.prompt')
-      .col-sm-5
-        = f.association :skirt_type, include_blank: t('helpers.select.prompt')
+      .col-sm-4
+        = f.input :tops_type, readonly: true, input_html: {id: "tops_type", value: "#{@design.tops_type.try(:name)}"}
+        = f.input :tops_type_id, as: 'hidden', input_html: {id: "tops_type_id"}
+      .col-sm-2
+        = button_tag '選択', type: "button", class: "btn btn-lg btn-primary align-bottom", onclick: "open_window('tops_type')"
+      .col-sm-4
+        = f.input :skirt_type, readonly: true, input_html: {id: "skirt_type", value: "#{@design.skirt_type.try(:name)}"}
+        = f.input :skirt_type_id, as: 'hidden', input_html: {id: "skirt_type_id"}
+      .col-sm-2
+        = button_tag '選択', type: "button", class: "btn btn-lg btn-primary align-bottom", onclick: "open_window('skirt_type')"
     .row
-      .col-sm-5
+      .col-sm-6
         = f.association :size, include_blank: t('helpers.select.prompt')
-      .col-sm-5
+      .col-sm-6
         = f.association :sex, include_blank: t('helpers.select.prompt')
     .row
-      .col-sm-10
+      .col-sm-12
         = f.association :open_type, include_blank: false
     = f.input :memo
     = f.input :design_img, input_html: { class: "form-control"}

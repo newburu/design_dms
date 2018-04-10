@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      skirt_type: スカート種類
+    attributes:
+      skirt_type:
+        name: 名前

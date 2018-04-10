@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      sleeve_type: 袖種類
+    attributes:
+      sleeve_type:
+        name: 名前

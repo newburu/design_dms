@@ -1,21 +1,29 @@
-h1 Listing sleeve_types
-
-table
+h1 = t('activerecord.models.sleeve_type')
+hr
+= search_form_for @q do |f|
+  .row
+    .col-sm-5
+      = f.input :name_cont, required: false, label: t('activerecord.attributes.sleeve_type.name')
+      = hidden_field_tag :mode, params[:mode]
+  .btn-toolbar
+    .btn-group.mr-2
+      = f.submit class: "btn btn-primary"
+    .btn-group.mr-2
+      = button_tag t('helpers.submit.close'), type: 'button', class: "btn btn-secondary", onclick: 'window.close()'
+p
+table.table.table-striped.table-hover.table-responsive.table-bordered
   thead
     tr
-      th Name
-      th
-      th
-      th
-
+      th = sort_link(@q, :name)
   tbody
     - @sleeve_types.each do |sleeve_type|
       tr
-        td = sleeve_type.name
-        td = link_to 'Show', sleeve_type
-        td = link_to 'Edit', edit_sleeve_type_path(sleeve_type)
-        td = link_to 'Destroy', sleeve_type, data: { confirm: 'Are you sure?' }, method: :delete
+      - if params[:mode] = 'dialog'
+        td onclick="window.opener.dialog_select('sleeve_type', '#{sleeve_type.name}', 'sleeve_type_id', '#{sleeve_type.id}');window.close();"
+          = sleeve_type.name
+      - else
+        td
+          = sleeve_type.name
 
 br
-
-= link_to 'New Sleeve type', new_sleeve_type_path
+= paginate @sleeve_types

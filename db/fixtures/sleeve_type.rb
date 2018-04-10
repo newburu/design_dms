@@ -1,4 +1,5 @@
 names = [
+  'セットイン・スリーブ',
 ]
 names.each.with_index(1) do |name, idx|
   SleeveType.seed do |s|

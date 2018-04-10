@@ -1,21 +1,29 @@
-h1 Listing tops_types
-
-table
+h1 = t('activerecord.models.tops_type')
+hr
+= search_form_for @q do |f|
+  .row
+    .col-sm-5
+      = f.input :name_cont, required: false, label: t('activerecord.attributes.tops_type.name')
+      = hidden_field_tag :mode, params[:mode]
+  .btn-toolbar
+    .btn-group.mr-2
+      = f.submit class: "btn btn-primary"
+    .btn-group.mr-2
+      = button_tag t('helpers.submit.close'), type: 'button', class: "btn btn-secondary", onclick: 'window.close()'
+p
+table.table.table-striped.table-hover.table-responsive.table-bordered
   thead
     tr
-      th Name
-      th
-      th
-      th
-
+      th = sort_link(@q, :name)
   tbody
     - @tops_types.each do |tops_type|
       tr
-        td = tops_type.name
-        td = link_to 'Show', tops_type
-        td = link_to 'Edit', edit_tops_type_path(tops_type)
-        td = link_to 'Destroy', tops_type, data: { confirm: 'Are you sure?' }, method: :delete
+      - if params[:mode] = 'dialog'
+        td onclick="window.opener.dialog_select('tops_type', '#{tops_type.name}', 'tops_type_id', '#{tops_type.id}');window.close();"
+          = tops_type.name
+      - else
+        td
+          = tops_type.name
 
 br
-
-= link_to 'New Tops type', new_tops_type_path
+= paginate @tops_types

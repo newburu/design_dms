@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      swimsuit_type: 水着種類
+    attributes:
+      swimsuit_type:
+        name: 名前
