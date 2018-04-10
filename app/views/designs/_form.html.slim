@@ -6,7 +6,7 @@
     .row
       .col-sm-12
         = f.association :genre, include_blank: t('helpers.select.prompt')
-    .row
+    .row.align-items-center
       .col-sm-4
         = f.input :collar_type, readonly: true, input_html: {id: "collar_type", value: "#{@design.collar_type.try(:name)}"}
         = f.input :collar_type_id, as: 'hidden', input_html: {id: "collar_type_id"}
@@ -17,7 +17,7 @@
         = f.input :sleeve_type_id, as: 'hidden', input_html: {id: "sleeve_type_id"}
       .col-sm-2
         = button_tag '選択', type: "button", class: "btn btn-lg btn-primary align-bottom", onclick: "open_window('sleeve_type')"
-    .row
+    .row.align-items-center
       .col-sm-4
         = f.input :cuff_type, readonly: true, input_html: {id: "cuff_type", value: "#{@design.cuff_type.try(:name)}"}
         = f.input :cuff_type_id, as: 'hidden', input_html: {id: "cuff_type_id"}
@@ -28,7 +28,7 @@
         = f.input :swimsuit_type_id, as: 'hidden', input_html: {id: "swimsuit_type_id"}
       .col-sm-2
         = button_tag '選択', type: "button", class: "btn btn-lg btn-primary align-bottom", onclick: "open_window('swimsuit_type')"
-    .row
+    .row.align-items-center
       .col-sm-4
         = f.input :tops_type, readonly: true, input_html: {id: "tops_type", value: "#{@design.tops_type.try(:name)}"}
         = f.input :tops_type_id, as: 'hidden', input_html: {id: "tops_type_id"}
