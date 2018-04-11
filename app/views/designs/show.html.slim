@@ -85,6 +85,8 @@ hr
         - img_path = image_path "now_printing.png"
         - img_path = @design.design_img.thumb.url if @design.design_img.present?
         = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.design_img')
+        br
+        = link_to t('simple_form.btn.download'), download_design_img_design_path, class: "btn btn-primary", target: "_blank" if @design.design_img.present?
   .col-sm-4
     .card
       .card-header
@@ -93,6 +95,8 @@ hr
         - img_path = image_path "now_printing.png"
         - img_path = @design.pattern_img.thumb.url if @design.pattern_img.present?
         = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.pattern_img')
+        br
+        = link_to t('simple_form.btn.download'), download_pattern_img_design_path, class: "btn btn-primary", target: "_blank" if @design.pattern_img.present?
   .col-sm-4
     .card
       .card-header
@@ -101,6 +105,8 @@ hr
         - img_path = image_path "now_printing.png"
         - img_path = @design.finished_img.thumb.url if @design.finished_img.present?
         = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.finished_img')
+        br
+        = link_to t('simple_form.btn.download'), download_finished_img_design_path, class: "btn btn-primary", target: "_blank" if @design.finished_img.present?
 
 .row
   .col-sm-6

@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :designs
+  resources :designs do
+    member do
+      get :download_design_img
+      get :download_pattern_img
+      get :download_finished_img
+    end
+  end
   resources :sexes
   resources :sizes
   resources :skirt_types

@@ -41,4 +41,10 @@ class Design < ApplicationRecord
     flg
   end
 
+  # ダウンロード数カウントアップ
+  def download_countup
+    self.download_point += 1
+    self.save
+  end
+
 end
