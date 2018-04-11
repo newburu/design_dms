@@ -82,19 +82,25 @@ hr
       .card-header
         strong = "#{t('activerecord.attributes.design.design_img')}:"
       .card-body
-        = image_tag @design.design_img
+        - img_path = image_path "now_printing.png"
+        - img_path = @design.design_img.thumb.url if @design.design_img.present?
+        = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.design_img')
   .col-sm-4
     .card
       .card-header
         strong = "#{t('activerecord.attributes.design.pattern_img')}:"
       .card-body
-        = image_tag @design.pattern_img
+        - img_path = image_path "now_printing.png"
+        - img_path = @design.pattern_img.thumb.url if @design.pattern_img.present?
+        = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.pattern_img')
   .col-sm-4
     .card
       .card-header
         strong = "#{t('activerecord.attributes.design.finished_img')}:"
       .card-body
-        = image_tag @design.finished_img
+        - img_path = image_path "now_printing.png"
+        - img_path = @design.finished_img.thumb.url if @design.finished_img.present?
+        = image_tag img_path, size: "160x160", class: "d-block w-20", alt: t('activerecord.attributes.design.finished_img')
 
 .row
   .col-sm-6
