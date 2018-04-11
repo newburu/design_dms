@@ -80,7 +80,7 @@ table.table.table-striped.table-hover.table-responsive.table-bordered
         td
           .thumbnail
             = image_tag design.finished_img.thumb.url if design.finished_img.present?
-        td = design.user.name
+        td = twitter_user_link(design.user.name, design.user.screen_name)
         td = design.open_type.try(:name)
         td = design.view_point
         td = design.download_point
