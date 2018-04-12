@@ -1,6 +1,6 @@
 system:
   title: 'デザイン管理システム'
-  url: 'https://design_dms.herokuapp.com/'
+  url: 'https://design-dms.herokuapp.com/'
   twitter:
     url: 'https://twitter.com/'
     tweet_url: 'http://twitter.com/intent/tweet?'
