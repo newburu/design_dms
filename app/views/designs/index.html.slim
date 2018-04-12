@@ -7,19 +7,44 @@ hr
   .row
     .col-sm-5
       = f.input :genre_id_eq, collection: @genres, label_method: :name,value_method: :id, include_blank: true, required: false, label: t('activerecord.attributes.design.genre')
-  .row
+  .row.align-items-center
     .col-sm-2
-      = f.input :collar_type_id_eq, collection: @collar_types, label_method: :name, value_method: :id, include_blank: true, required: false, label: t('activerecord.attributes.design.collar_type')
+      = label_tag t('activerecord.attributes.design.collar_type')
+      = text_field_tag :collar_type, params[:collar_type], id: "collar_type", readonly: true, class: "form-control"
+      = f.input :collar_type_id_eq, as: 'hidden', input_html: {id: "collar_type_id"}
+    .col-sm-1
+      = button_tag '選択', type: "button", class: "btn btn-lg btn-primary align-bottom", onclick: "open_window('collar_type')"
     .col-sm-2
-      = f.input :sleeve_type_id_eq, collection: @sleeve_types, label_method: :name, value_method: :id, include_blank: true, required: false, label: t('activerecord.attributes.design.sleeve_type')
+      = label_tag t('activerecord.attributes.design.sleeve_type')
+      = text_field_tag :sleeve_type, params[:sleeve_type], id: "sleeve_type", readonly: true, class: "form-control"
+      = f.input :sleeve_type_id_eq, as: 'hidden', input_html: {id: "sleeve_type_id"}
+    .col-sm-1
+      = button_tag '選択', type: "button", class: "btn btn-lg btn-primary align-bottom", onclick: "open_window('sleeve_type')"
     .col-sm-2
-      = f.input :cuff_type_id_eq, collection: @cuff_types, label_method: :name, value_method: :id, include_blank: true, required: false, label: t('activerecord.attributes.design.cuff_type')
+      = label_tag t('activerecord.attributes.design.cuff_type')
+      = text_field_tag :cuff_type, params[:cuff_type], id: "cuff_type", readonly: true, class: "form-control"
+      = f.input :cuff_type_id_eq, as: 'hidden', input_html: {id: "cuff_type_id"}
+    .col-sm-1
+      = button_tag '選択', type: "button", class: "btn btn-lg btn-primary align-bottom", onclick: "open_window('cuff_type')"
+  .row.align-items-center
     .col-sm-2
-      = f.input :swimsuit_type_id_eq, collection: @swimsuit_types, label_method: :name, value_method: :id, include_blank: true, required: false, label: t('activerecord.attributes.design.swimsuit_type')
+      = label_tag t('activerecord.attributes.design.swimsuit_type')
+      = text_field_tag :swimsuit_type, params[:swimsuit_type], id: "swimsuit_type", readonly: true, class: "form-control"
+      = f.input :swimsuit_type_id_eq, as: 'hidden', input_html: {id: "swimsuit_type_id"}
+    .col-sm-1
+      = button_tag '選択', type: "button", class: "btn btn-lg btn-primary align-bottom", onclick: "open_window('swimsuit_type')"
     .col-sm-2
-      = f.input :tops_type_id_eq, collection: @tops_types, label_method: :name, value_method: :id, include_blank: true, required: false, label: t('activerecord.attributes.design.tops_type')
+      = label_tag t('activerecord.attributes.design.tops_type')
+      = text_field_tag :tops_type, params[:tops_type], id: "tops_type", readonly: true, class: "form-control"
+      = f.input :tops_type_id_eq, as: 'hidden', input_html: {id: "tops_type_id"}
+    .col-sm-1
+      = button_tag '選択', type: "button", class: "btn btn-lg btn-primary align-bottom", onclick: "open_window('tops_type')"
     .col-sm-2
-      = f.input :skirt_type_id_eq, collection: @skirt_types, label_method: :name, value_method: :id, include_blank: true, required: false, label: t('activerecord.attributes.design.skirt_type')
+      = label_tag t('activerecord.attributes.design.skirt_type')
+      = text_field_tag :skirt_type, params[:skirt_type], id: "skirt_type", readonly: true, class: "form-control"
+      = f.input :skirt_type_id_eq, as: 'hidden', input_html: {id: "skirt_type_id"}
+    .col-sm-1
+      = button_tag '選択', type: "button", class: "btn btn-lg btn-primary align-bottom", onclick: "open_window('skirt_type')"
   .row
     .col-sm-4
       = f.input :size_id_eq, collection: @sizes, label_method: :name, value_method: :id, include_blank: true, required: false, label: t('activerecord.attributes.design.size')
