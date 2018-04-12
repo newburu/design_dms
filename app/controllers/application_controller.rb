@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   class Forbidden < ActionController::ActionControllerError; end
   class IpAddressRejected < ActionController::ActionControllerError; end
   
-  include ErrorHandlers if Rails.env.production? or Rails.env.staging?  # 開発に影響が出ないように、本番と検証環境のみに適用する
+  #include ErrorHandlers if Rails.env.production? or Rails.env.staging?  # 開発に影響が出ないように、本番と検証環境のみに適用する
 
   def twitter_client
     # Twitterから取得
