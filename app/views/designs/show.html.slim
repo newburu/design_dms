@@ -74,7 +74,7 @@ hr
       .card-header
         strong = "#{t('activerecord.attributes.design.memo')}:"
       .card-body
-        = @design.memo
+        = simple_format(h(@design.memo))
 
 .row
   .col-sm-4
