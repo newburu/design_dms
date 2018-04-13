@@ -133,6 +133,6 @@
           br
           br
           p
-            = link_to Settings.system[:twitter][:share_url] + "text=あなたの作った型紙を共有して、服飾の輪を広げよう！%0a%0a＃" + "#{Settings.system[:title]}%0a", {class: "btn btn-social btn-twitter", target: "_blank"}
+            = link_to Settings.system[:twitter][:share_url] + "url=#{Settings.system[:url]}&text=あなたの作った型紙を共有して、服飾の輪を広げよう！%0a%0a＃" + "#{Settings.system[:title]}%0a", {class: "btn btn-social btn-twitter", target: "_blank"}
               i.fa.fa-twitter.left
               = "Twitterで共有"
