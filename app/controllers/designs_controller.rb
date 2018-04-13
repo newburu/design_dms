@@ -1,8 +1,9 @@
 class DesignsController < InheritedResources::Base
 
+  before_action :check_login, only: [:index]
+  before_action :check_open_type
+
   def index
-    redirect_to static_pages_info_url unless current_user.present?
-    
     # 全体公開ならOK
     con = {
       g: {
@@ -84,6 +85,25 @@ private
     ret = params.require(:design).permit(:name, :genre_id, :collar_type_id, :sleeve_type_id, :cuff_type_id, :swimsuit_type_id, :tops_type_id, :skirt_type_id, :size_id, :sex_id, :open_type_id, :memo, :design_img, :pattern_img, :finished_img, :view_point, :download_poin)
     ret[:user] = current_user
     ret
+  end
+
+  def check_login
+    # ログインしていなければ、サイト説明ページに移動
+    redirect_to root_url and return unless current_user.present?
+  end
+
+  def check_open_type
+    # 公開範囲に一致しなければ、ポータルページに移動
+    if params[:id].present?
+      begin
+        @design = Design.find(params[:id])
+        redirect_to root_url and return unless @design.can_view?(current_user)
+      rescue ActiveRecord::RecordNotFound => e
+        redirect_to root_url and return
+      rescue StandardError => e
+        redirect_to root_url and return
+      end
+    end
   end
 
 end
