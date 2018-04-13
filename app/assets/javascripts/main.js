@@ -21,7 +21,7 @@ function open_window(type)
       url = '/skirt_types/?mode=dialog';
       break;
   }
-  window.open(url , 'SELECT');
+  window.open(url , 'SELECT', "width=500,height=700,resizable=yes,scrollbars=yes");
 }
 
 function dialog_select(name_id, name_val, id_id, id_val)
