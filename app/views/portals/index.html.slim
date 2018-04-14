@@ -85,6 +85,12 @@
             = "自分だけでのナレッジとして持っているのも良いですが、"
             br
             = "みんなで共有して、楽しい服飾ライフを過ごしませんか？！"
+    - unless current_user.present?
+      .row
+        .col-sm-12
+          = link_to user_twitter_omniauth_authorize_path, {class: "btn btn-social btn-twitter"}
+            i.fa.fa-twitter.left
+            = "Twitterでログイン"
     br
     br
     br
