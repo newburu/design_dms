@@ -5,6 +5,11 @@ html lang="en"
     meta charset="utf-8"
     meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
+    meta name="twitter:card" content="summary_large_image"
+    meta name="twitter:creator" content="@#{Settings.system[:twitter_creator]}"
+    meta name="twitter:title" content="#{Settings.system[:title]}"
+    meta name="twitter:description" content="#{Settings.system[:description]}"
+    meta name="twitter:image" content="#{image_path('eyecatch.jpg')}"
     = favicon_link_tag
     title= content_for?(:title) ? yield(:title) : Settings.system[:title]
     = csrf_meta_tags
