@@ -9,7 +9,7 @@ html lang="en"
     meta name="twitter:site" content="@#{Settings.system[:twitter_site]}"
     meta name="og:title" content="#{Settings.system[:title]}"
     meta name="og:description" content="#{Settings.system[:description]}"
-    meta name="og:image" content="#{image_path('eyecatch.jpg')}"
+    meta name="og:image" content="#{Settings.system[:url]}/#{image_path('eyecatch.jpg')}"
     = favicon_link_tag
     title= content_for?(:title) ? yield(:title) : Settings.system[:title]
     = csrf_meta_tags
