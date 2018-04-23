@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_one :option, :class_name => "UserOption"
   accepts_nested_attributes_for :option
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
 
   #############
   # スコープ
