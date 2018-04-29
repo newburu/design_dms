@@ -1,6 +1,7 @@
 system:
   title: 'デザイン管理システム'
   url: 'https://design-dms.herokuapp.com/'
+  bbs_url: 'http://www.newburu.com/bbs/design-dms/joyful.cgi'
   description: 'あなたの作った型紙を共有して、服飾の輪を広げよう！自分だけでのナレッジとして持っているのも良いですが、みんなで共有して、楽しい服飾ライフを過ごしませんか？！'
   twitter_site: newburu
   twitter:
