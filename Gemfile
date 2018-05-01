@@ -113,6 +113,7 @@ gem 'seed-fu'
 
 # ファイルアップロード
 gem "carrierwave"
+gem 'carrierwave-ftp', :require => 'carrierwave/storage/sftp' # SFTP only
 gem "mini_magick"
 
 gem 'config'

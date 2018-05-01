@@ -58,25 +58,25 @@ class DesignsController < InheritedResources::Base
   def download_design_img
     @design = Design.find(params[:id])
     @design.download_countup unless @design.user_eq?(current_user)
-    filepath = @design.design_img.current_path
-    stat = File::stat(filepath)
-    send_file(filepath, :filename => @design.design_img_identifier, :length => stat.size)
+    filepath = @design.design_img.url
+    stat = open(filepath)
+    send_data(stat.read, :filename => @design.design_img_identifier, :length => stat.size)
   end
 
   def download_pattern_img
     @design = Design.find(params[:id])
     @design.download_countup unless @design.user_eq?(current_user)
-    filepath = @design.pattern_img.current_path
-    stat = File::stat(filepath)
-    send_file(filepath, :filename => @design.pattern_img_identifier, :length => stat.size)
+    filepath = @design.pattern_img.url
+    stat = open(filepath)
+    send_data(stat.read, :filename => @design.pattern_img_identifier, :length => stat.size)
   end
 
   def download_finished_img
     @design = Design.find(params[:id])
     @design.download_countup unless @design.user_eq?(current_user)
-    filepath = @design.finished_img.current_path
-    stat = File::stat(filepath)
-    send_file(filepath, :filename => @design.finished_img_identifier, :length => stat.size)
+    filepath = @design.finished_img.url
+    stat = open(filepath)
+    send_data(stat.read, :filename => @design.finished_img_identifier, :length => stat.size)
   end
 
 private
